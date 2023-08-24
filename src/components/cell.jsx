@@ -15,13 +15,19 @@ class Cell extends React.Component {
     }
 
     colorChange = (mouse) => {
+        const color = this.getColor();
         if (mouse.buttons === 1) {
-            document.getElementById(this.props.Id).style.backgroundColor = "#000000";
+            document.getElementById(this.props.Id).style.backgroundColor = color;
         }
     }
 
     changeThis = () => {
-        document.getElementById(this.props.Id).style.backgroundColor = "#000000";
+        const color = this.getColor();
+        document.getElementById(this.props.Id).style.backgroundColor = color;
+    }
+
+    getColor() {
+        return (sessionStorage.getItem("brushcolor") === null) ? "#000000" : sessionStorage.getItem("brushcolor");
     }
 }
 
