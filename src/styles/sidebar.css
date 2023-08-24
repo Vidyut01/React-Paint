@@ -1,0 +1,9 @@
+.Sidebar {
+    min-height: 90%;
+    min-width: 5%;
+    background-color: bisque;
+    border: 1px solid black;
+    border-radius: 0px 16px 16px 0px;
+    position: fixed;
+    left: 0;
+}
