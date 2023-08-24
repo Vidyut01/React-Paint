@@ -1,26 +1,36 @@
 import "../styles/sidebar.css";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { BsFillPencilFill, BsFillEraserFill } from "react-icons/bs";
-import { HexColorPicker } from "react-colorful";
 
-function Sidebar(props) {
-    
-    const [color, setColor] = useState("#aabbcc");
+function Sidebar() {
+    sessionStorage.setItem("brushcolor", "#000000");
+    sessionStorage.setItem("tool", "pen");
 
     return (
         <div className="Sidebar">
-            <button href="#" onClick={changeColor.bind(this, "#000000")}>black</button>
-            <button href="#" onClick={changeColor.bind(this, "#0000ff")}>blue</button>
-            <BsFillPencilFill size={30} />
-            <BsFillEraserFill size={30} />
-            
-            <HexColorPicker color={color} onChange={setColor} />
+            <a href="/#" onClick={() => changeTool("pen")}>
+                <BsFillPencilFill size={30} id="pen" />
+            </a>
+            <a href="/#" onClick={() => changeTool("eraser")}>
+                <BsFillEraserFill size={30} id="eraser" />
+            </a>
+
+            <input aria-label="color_picker" id="colorpicker" type="color" onChange={() => changeColor("colorpicker")} />
         </div>
     );
 }
 
-function changeColor(color) {
-    sessionStorage.setItem("brushcolor", color);
+function changeColor(id) {
+    const picker = document.getElementById(id);
+    sessionStorage.setItem("brushcolor", picker.value);
+}
+
+function changeTool(tool) {
+    sessionStorage.setItem("tool", tool);
+    if (tool === "pen") {
+        console.log("here");
+        document.getElementById("pen").fill = "8b8b8d"
+    }
 }
 
 export default Sidebar;
