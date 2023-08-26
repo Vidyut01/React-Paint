@@ -1,9 +1,9 @@
-import "../styles/board.css";
+import "../../styles/board.css";
 import Cell from "./cell";
 
 function Board() {
 
-    const board = createBoard(32);
+    const board = createBoard(64);
     console.log(board[0]);
     
     return (
@@ -21,7 +21,6 @@ function createBoard(size) {
     for (let i = 0; i < size; i++) {
         board2 = [];
         for (let j = 0; j < size; j++) {
-            // board2.push(<div className="cells" id={i + "-" + j}></div>);
             board2.push(<Cell Id={i + "-" + j}/>);
         }
         board.push(<div className="rows" id={"row" + i}>{board2}</div>);

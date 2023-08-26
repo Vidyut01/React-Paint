@@ -1,6 +1,6 @@
 import './styles/App.css';
-import Board from './components/board';
-import Sidebar from './components/sidebar';
+import Board from './components/board/board';
+import Sidebar from './components/sidebar/sidebar';
 
 function App() {
   return (

@@ -1,4 +1,4 @@
-import "../styles/cell.css";
+import "../../styles/cell.css";
 import React from "react";
 
 class Cell extends React.Component {
@@ -10,7 +10,7 @@ class Cell extends React.Component {
 
     render() {
         return (
-            <div className="Cell" id={this.props.Id} onMouseOver={this.colorChange} onMouseDown={this.changeThis}></div>
+            <div className="Cell" id={this.props.Id} onMouseOver={this.colorChange} onMouseDown={this.changeThis} />
         );
     }
 

@@ -1,6 +1,6 @@
 .Sidebar {
-    min-height: 90%;
-    min-width: 5%;
+    height: 90%;
+    width: 5%;
     background-color: bisque;
     border: 1px solid black;
     border-radius: 0px 16px 16px 0px;
@@ -24,10 +24,30 @@
     height: 35px;
 }
 
-#pen {
-    padding-top: 20px;
+#pen-fill {
+    margin-top: 20px;
+    border: inherit;
+    
 }
 
 a {
     color: inherit;
+}
+
+.tool-button {
+    height: 45px;
+    width: 45px;
+    background-color: transparent;
+    border: none;
+}
+
+#color-add, #clear {
+    word-wrap: break-word;
+    width: 49px;
+    padding: 0px;
+   
+}
+
+#clear {
+    height: 30px;
 }

@@ -2,6 +2,7 @@
     width: 50%;
     aspect-ratio: 1;
     border: solid 1px black;
+    border-right: 2px solid black;
     display: flex;
     flex-direction: column;
 }
