@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 function Sidebar() {
     sessionStorage.setItem("brushcolor", "#000000");
     sessionStorage.setItem("tool", "pen");
+    // let savedColors = getSavedColors();
 
     return (
         <div className="Sidebar">
@@ -20,7 +21,9 @@ function Sidebar() {
 
             <button type="button" id="clear" className="btn btn-danger" onClick={clearBoard}>Clear</button>
 
-            <button type="button" id="color-add" className="btn btn-primary">Add Color</button>
+            {/* <button type="button" id="color-add" className="btn btn-primary" onClick={addColor}>Add Color</button>
+
+            {savedColors} */}
 
 
         </div>
@@ -53,5 +56,46 @@ function clearBoard() {
         cells[i].style.backgroundColor = "#ffffff";
     }
 }
+
+// function addColor() {
+//     const colorsString = localStorage.getItem("saved-colors");
+//     let colors = [];
+//     if (colorsString !== null) {
+//         colors = JSON.parse(colorsString);
+//     }
+
+//     const currColor = sessionStorage.getItem("brushcolor");
+
+//     for (let i = 0; i < colors.length; i++) {
+//         if (colors[i] === currColor) return;
+//     }
+
+//     if (colors.length < 5) {
+//         colors.push(currColor);
+//     }
+//     else {
+//         for (let i = 0; i < colors.length - 1; i++) {
+//             colors[i] = colors[i + 1];
+//         }
+//         colors[colors.length - 1] = currColor;
+//     }
+//     localStorage.setItem("saved-colors", JSON.stringify(colors));
+//     console.log(colors);
+// }
+
+// function getSavedColors() {
+//     const colorsString = localStorage.getItem("saved-colors");
+//     if (colorsString === null) return [];
+
+//     const colors = JSON.parse(colorsString);
+
+//     let retArray = [];
+//     let button = null;
+//     for (let i = 0; i < colors.length; i++) {
+//         button = <button href="#" onClick={() => {sessionStorage.setItem("brushcolor", colors[i]);}}>{colors[i]}</button>;
+//         retArray.push(button);
+//     }
+//     return retArray;
+// }
 
 export default Sidebar;
