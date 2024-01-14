@@ -12,3 +12,18 @@
     display: flex;
     justify-content: space-evenly;
 }
+
+#sizes-lable {
+    font-size: large;
+    margin-left: 10px;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+}
+
+#sizes {
+    width: 10em;
+    margin-left: 10px;
+}

@@ -10,10 +10,17 @@ function Board() {
     return (
         <div className="Board">
             {board}
-            <button type="button" id="clear" className="btn btn-danger" onClick={() => {updateBoard(createBoard(32)); clearBoard();}}>Clear</button>
+            <div className="options">
+                <label for="sizes" id="sizes-lable">Board Size</label>
+                <select id="sizes" className="form-select" onChange={(e) => {updateBoard(createBoard(e.target.value)); clearBoard();}}>
+                    <option value="16">16x16px</option>
+                    <option value="32">32x32px</option>
+                    <option value="64">64x64px</option>
+                    <option value="128">128x128px</option>
+                </select>
+            </div>
         </div>
-    );
-        
+    );  
 }
     
 function createBoard(size) {  
@@ -23,7 +30,7 @@ function createBoard(size) {
     for (let i = 0; i < size; i++) {
         board2 = [];
         for (let j = 0; j < size; j++) {
-            board2.push(<Cell Id={i + "-" + j}/>);
+            board2.push(<Cell Id={i + "-" + j} />);
         }
         board.push(<div className="rows" id={"row" + i}>{board2}</div>);
     }
